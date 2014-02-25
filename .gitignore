@@ -1,0 +1,7 @@
+auto-save-list/
+elpa/
+backups/
+cache/
+snippets/
+.places
+.gitmodules
