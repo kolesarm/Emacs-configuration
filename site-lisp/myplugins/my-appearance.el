@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-02-25 17:02:24 (kolesarm)>
+;; Time-stamp: <2014-02-25 19:45:43 (kolesarm)>
 
 ;; 1. FONT LOCK AND BELLS
 
@@ -58,7 +58,8 @@
 (require 'diminish)
 
 (eval-after-load "yasnippet" '(diminish 'yas-minor-mode)) ;; Yas
-(eval-after-load "yasnippet" '(diminish 'ethan-wspace-mode)) ;; ew:mnlt
+(eval-after-load "ethan-wspace" '(diminish 'ethan-wspace-mode)) ;; ew:mnlt
+(eval-after-load "flyspell" '(diminish 'flyspell-mode)) ;; Fly
 
 
 (provide 'my-appearance)

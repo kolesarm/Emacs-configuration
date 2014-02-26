@@ -1,4 +1,4 @@
-; Time-stamp: <2014-02-25 16:41:18 (kolesarm)>
+; Time-stamp: <2014-02-25 19:23:54 (kolesarm)>
 
 ;; Some of the defaults copied from Sveen's
 
@@ -13,7 +13,7 @@
 ;; Make backups of files, even when they're in version control
 (setq vc-make-backup-files t)
 
-;; Save point position between sessions
+;; Save point position between sessions. The saveplace package is part of Emacs
 (require 'saveplace)
 (setq-default save-place t)
 (setq save-place-file (expand-file-name ".places" user-emacs-directory))

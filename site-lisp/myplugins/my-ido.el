@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-02-25 18:38:08 (kolesarm)>
+;; Time-stamp: <2014-02-25 19:44:13 (kolesarm)>
 
 ;; 1. IDO-MODE (included with emacs23)
 ;; Interactively DO things:
@@ -26,6 +26,8 @@
 
 ;; when using ido, the confirmation is rather annoying...
 (setq confirm-nonexistent-file-or-buffer nil)
+
+;; ~/ sends you home.
 
 ;; 2. RECENTF (included with emacs21)
 ;;recentf M-F9 will open a buffer with recently open files

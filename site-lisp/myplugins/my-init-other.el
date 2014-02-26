@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-02-25 19:19:59 (kolesarm)>
+;; Time-stamp: <2014-02-25 19:27:39 (kolesarm)>
 
 ;; 1. IBUFFER
 (defalias 'list-buffers 'ibuffer)
@@ -77,6 +77,18 @@
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "/usr/bin/conkeror")
 
+;; Webjumps
+(global-set-key (kbd "C-x g") 'webjump)
+
+;; Add Urban Dictionary to webjump
+(eval-after-load "webjump"
+'(add-to-list 'webjump-sites
+              '("Urban Dictionary" .
+                [simple-query
+                 "www.urbandictionary.com"
+                 "http://www.urbandictionary.com/define.php?term="
+                 ""])))
+
 ;; 9. UNFILL PARAGRAPH
 (defun unfill-region (start end)
   "Replace newline chars in region by single spaces.
@@ -110,6 +122,8 @@ This command does the reverse of `fill-region'."
 ;; 14. TRAMP
 ; tramp complains with some recursive load error, so I disable it
 ; (setq tramp-mode nil)
+
+
 
 
 (provide 'my-init-other)
