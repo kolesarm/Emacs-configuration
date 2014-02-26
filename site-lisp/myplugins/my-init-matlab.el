@@ -37,9 +37,8 @@
 ; ESS
 (require 'ess-site)
 (setq ess-ask-about-transfile nil)
-(set-default 'ess-history-file nil) ; don't save history
-
-
 ; If set to t, ESS asks where to save the text in the buffer with R process. You
 ; can number these files according to date, so you will always have another way
 ; to track what exactly you were doing.
+
+(set-default 'ess-history-file nil) ; don't save history

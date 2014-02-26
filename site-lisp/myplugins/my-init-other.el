@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-02-25 18:59:30 (kolesarm)>
+;; Time-stamp: <2014-02-25 19:19:59 (kolesarm)>
 
 ;; 1. IBUFFER
 (defalias 'list-buffers 'ibuffer)
@@ -69,6 +69,9 @@
 (sp-local-pair 'latex-mode "`" nil :actions '(:rem insert))
 
 (sp-pair "'" nil :actions :rem) ; I'd like to write I'd, not I''d
+
+;; smartparens-mode doesn't activate itself in special buffers like R
+(add-hook 'ess-R-post-run-hook 'smartparens-mode)
 
 ;; 8. CONKEROR AS DEFAULT BROWSER
 (setq browse-url-browser-function 'browse-url-generic
