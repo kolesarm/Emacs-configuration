@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-02-25 19:45:43 (kolesarm)>
+;; Time-stamp: <2014-02-26 10:38:01 (kolesarm)>
 
 ;; 1. FONT LOCK AND BELLS
 
@@ -34,10 +34,10 @@
 (setq show-paren-style 'expression)
 
 ;; 3. COLORS AND FONTS
-(require 'color-theme)
-(color-theme-initialize)
-(setq color-theme-is-global t)
-(color-theme-wheat)
+
+;; Prior to Emacs 24, use color-theme. Now install
+;; emacs-color-theme-solarized, and
+(load-theme 'solarized-light t) ; M-x disable-theme disables it
 
 ; Anonymous pro is designed for coding. O,0 and 1,l look distinct.
 (when (window-system)
