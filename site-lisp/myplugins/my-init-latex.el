@@ -40,6 +40,25 @@
 
 (setq reftex-plug-into-auctex t)
 
+;; do not prompt whether I want \pageref or not.
+(setq reftex-ref-macro-prompt nil)
+(eval-after-load
+    "latex"
+  '(TeX-add-style-hook
+    "cleveref"
+    (lambda ()
+      (if (boundp 'reftex-ref-style-alist)
+      (add-to-list
+       'reftex-ref-style-alist
+       '("Cleveref" "cleveref"
+         (("\\Cref" ?C) ("\\cref" ?c) ("\\cpageref" ?d) ("\\Cpageref" ?D)))))
+      (add-to-list 'reftex-ref-style-default-list "Cleveref")
+      (TeX-add-symbols
+       '("Cref" TeX-arg-ref)
+       '("cref" TeX-arg-ref)
+       '("cpageref" TeX-arg-ref)
+       '("Cpageref" TeX-arg-ref)))))
+
 ;; 2. EXTRA SHORTCUTS
 (load "my-latex-primer")
 

@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-02-26 10:38:01 (kolesarm)>
+;; Time-stamp: <2014-02-26 10:44:29 (kolesarm)>
 
 ;; 1. FONT LOCK AND BELLS
 
@@ -36,7 +36,7 @@
 ;; 3. COLORS AND FONTS
 
 ;; Prior to Emacs 24, use color-theme. Now install
-;; emacs-color-theme-solarized, and
+;; emacs-color-theme-solarized, simply
 (load-theme 'solarized-light t) ; M-x disable-theme disables it
 
 ; Anonymous pro is designed for coding. O,0 and 1,l look distinct.
@@ -60,6 +60,7 @@
 (eval-after-load "yasnippet" '(diminish 'yas-minor-mode)) ;; Yas
 (eval-after-load "ethan-wspace" '(diminish 'ethan-wspace-mode)) ;; ew:mnlt
 (eval-after-load "flyspell" '(diminish 'flyspell-mode)) ;; Fly
+(eval-after-load "git-gutter-fringe" '(diminish 'git-gutter-mode)) ;; GitGutter
 
 
 (provide 'my-appearance)

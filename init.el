@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-02-25 18:51:57 (kolesarm)>
+;; Time-stamp: <2014-03-03 15:22:28 (kolesarm)>
 
 ;; 1. EMACS LOAD PATH. We install all packages in ~/.emacs.d/site-lisp
 (let ((default-directory "~/.emacs.d/site-lisp/"))
@@ -36,6 +36,7 @@
 ;; Setup extensions
 (require 'my-init-other) ;; misc extensions
 (require 'my-ido) ; ido and recentf
+(require 'my-dired) ; Directory Editor
 
 ;; Language-specific
 (load "my-init-python") ; python, sage, haskell
