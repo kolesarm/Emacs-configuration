@@ -14,21 +14,17 @@
 ;; 2. TURN OFF MOUSE INTERFACE early in startup to avoid momentary display
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
-;;(if (fboundp 'menu-bar-mode) (menu-bar-mode 1)) Menu is ok
+;; (menu-bar-mode -1) Menu is ok
 
-(setq inhibit-startup-message t) ; no splash screen
+(setq inhibit-startup-message t)                    ; no splash screen
 (setq inhibit-startup-echo-area-message "kolesarm") ; load quietly
 
 ;; 3. PACKAGES IN EMACS 24
-(when (>= emacs-major-version 24)
-  (require 'package)
-  (package-initialize)
-  (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
-  )
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(package-initialize)                    ; initialize ELPA packages
 
 ;; 4. CUSTOM SCRIPTS
-;; Custom scripts are all in ~/.emacs.d/site-lisp/myplugins/
-
 ;; Change defaults and appearance
 (require 'my-defaults) ; default variable settings
 (require 'my-appearance)

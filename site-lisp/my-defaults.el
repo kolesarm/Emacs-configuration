@@ -1,4 +1,4 @@
-; Time-stamp: <2014-02-25 19:23:54 (kolesarm)>
+; Time-stamp: <2014-03-03 16:33:18 (kolesarm)>
 
 ;; Some of the defaults copied from Sveen's
 
