@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-02-26 10:44:29 (kolesarm)>
+;; Time-stamp: <2014-03-11 08:15:42 (kolesarm)>
 
 ;; 1. FONT LOCK AND BELLS
 
@@ -42,7 +42,7 @@
 ; Anonymous pro is designed for coding. O,0 and 1,l look distinct.
 (when (window-system)
   (set-frame-font "Anonymous Pro")
-  (set-face-attribute 'default nil :family "Anonymous Pro" :height 135)
+  (set-face-attribute 'default nil :family "Anonymous Pro" :height 130)
   (set-face-font 'default "Anonymous Pro"))
 
 ; fall back on DejaVu for unicode characters

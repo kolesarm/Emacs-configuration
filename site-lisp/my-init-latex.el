@@ -11,6 +11,11 @@
 
 (setq TeX-PDF-mode t) ; pdf mode by default
 
+; don't highlight syntax inside these
+(setq LaTeX-verbatim-environments '("Verbatim" "lstlisting"))
+(setq LaTeX-verbatim-macros-with-delims '("lstinline" "verb" "verb*"))
+
+
 ;; customize viewers
 ; okular -unique emacs.pdf#src:49emacs.tex
 ;(setq TeX-view-program-list '(("evince" "evince --page-index=%(outpage) %o")))
@@ -51,13 +56,16 @@
       (add-to-list
        'reftex-ref-style-alist
        '("Cleveref" "cleveref"
-         (("\\Cref" ?C) ("\\cref" ?c) ("\\cpageref" ?d) ("\\Cpageref" ?D)))))
+         (("\\cref" ?c) ("\\Cref" ?C) ("\\cpageref" ?d) ("\\Cpageref" ?D)))))
       (add-to-list 'reftex-ref-style-default-list "Cleveref")
+      (setq reftex-label-alist '(AMSTeX)) ; not sure why it doesn't parse amstex
+                                        ; automatically
       (TeX-add-symbols
-       '("Cref" TeX-arg-ref)
        '("cref" TeX-arg-ref)
+       '("Cref" TeX-arg-ref)
        '("cpageref" TeX-arg-ref)
        '("Cpageref" TeX-arg-ref)))))
+
 
 ;; 2. EXTRA SHORTCUTS
 (load "my-latex-primer")

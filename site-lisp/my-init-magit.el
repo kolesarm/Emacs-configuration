@@ -1,3 +1,5 @@
+;; Time-stamp: <2014-03-03 16:41:29 (kolesarm)>
+
 (require 'magit)
 (global-set-key (kbd "C-x m") 'magit-status)
 

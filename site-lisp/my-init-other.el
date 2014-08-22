@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-02-25 19:27:39 (kolesarm)>
+;; Time-stamp: <2014-03-08 20:04:07 (kolesarm)>
 
 ;; 1. IBUFFER
 (defalias 'list-buffers 'ibuffer)
@@ -68,7 +68,14 @@
 (sp-local-pair 'latex-mode "'" nil :actions '(:rem insert))
 (sp-local-pair 'latex-mode "`" nil :actions '(:rem insert))
 
-(sp-pair "'" nil :actions :rem) ; I'd like to write I'd, not I''d
+;(sp-pair "'" nil :actions :rem) ; I'd like to write I'd, not I''d
+
+; I'd like to write I'd, not I''d
+(sp-pair "'" nil :unless '(sp-point-after-word-p))
+(sp-pair "(" nil :unless '(sp-point-before-word-p))
+(sp-pair "[" nil :unless '(sp-point-before-word-p))
+(sp-pair "\"" nil :unless '(sp-point-before-word-p))
+
 
 ;; smartparens-mode doesn't activate itself in special buffers like R
 (add-hook 'ess-R-post-run-hook 'smartparens-mode)
@@ -122,8 +129,5 @@ This command does the reverse of `fill-region'."
 ;; 14. TRAMP
 ; tramp complains with some recursive load error, so I disable it
 ; (setq tramp-mode nil)
-
-
-
 
 (provide 'my-init-other)

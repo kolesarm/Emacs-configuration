@@ -26,7 +26,7 @@
 ; decoration.
 
 ; enable MLINT
-(setq mlint-programs (quote ("/opt/matlab/bin/glnxa64/mlint")))
+(setq mlint-programs (quote ("/usr/local/MATLAB/R2013b/bin/glnxa64/mlint")))
 (add-hook 'matlab-mode-hook (lambda () (mlint-minor-mode 1)))
 (setq matlab-show-mlint-warnings t)
 (setq matlab-highlight-cross-function-variables t)

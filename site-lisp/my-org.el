@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-02-25 16:36:36 (kolesarm)>
+;; Time-stamp: <2014-08-22 16:02:59 (kolesarm)>
 
 ;;;; ORG-MODE
 ; automatically in Emacs 22
@@ -42,10 +42,14 @@
       ))
 
 ;;;; TODO.TXT
-(require 'todotxt)
-(setq todotxt-default-file (expand-file-name "/home/kolesarm/docs/Dropbox/todo/todo.txt"))
-(define-key global-map "\C-cT" 'todotxt-open-file)
+;; there are two modes, this first one sucks
+;; (require 'todotxt)
+(require 'todotxt-mode)
 (add-to-list 'auto-mode-alist '("\\todo.txt$" . todotxt-mode))
+(setq todotxt-default-file
+      (expand-file-name "/home/kolesarm/Dropbox/todo/todo.txt"))
+;; (define-key global-map "\C-co" 'todotxt-open-file)
+;; (define-key global-map "\C-ct" 'todotxt-add-todo)
 
 ;; Templates
 ; <n adds comment
