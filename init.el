@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-03-03 16:41:14 (kolesarm)>
+;; Time-stamp: <2014-11-17 16:44:36 (kolesarm)>
 
 ;; 1. EMACS LOAD PATH. All custom code in ~/.emacs.d/site-lisp
 (let ((default-directory "~/.emacs.d/site-lisp/"))

@@ -1,10 +1,10 @@
-;; Time-stamp: <2014-08-22 16:02:59 (kolesarm)>
+;; Time-stamp: <2014-11-14 10:36:18 (kolesarm)>
 
 ;;;; ORG-MODE
 ; automatically in Emacs 22
-(require 'org-latex) ;make latex work!
+;(require 'org-latex) ;make latex work!
 ; org-beamer --- for some reason it's not part of my emacs build
-(require 'org-beamer)
+;(require 'org-beamer)
 
 ;; Fontify org-mode code blocks
 (setq org-src-fontify-natively t)
@@ -18,8 +18,10 @@
 
 ; make code colorful
 (setq org-export-latex-listings t)
-(add-to-list 'org-export-latex-packages-alist '("" "listings"))
-(add-to-list 'org-export-latex-packages-alist '("" "color"))
+;; used to be called org-export-latex-packages-alist. A cell is of the format
+;; ("options" "package" SNIPPET-FLAG)
+(add-to-list 'org-latex-packages-alist '("" "listings"))
+(add-to-list 'org-latex-packages-alist '("" "color"))
 
 (add-hook 'org-mode-hook 'turn-on-reftex) ; reftex
 ;(add-hook 'org-mode-hook 'turn-on-org-cdlatex) ;latex shortcuts don't want cdlatex, perhaps? Else I need to download it, I think.
