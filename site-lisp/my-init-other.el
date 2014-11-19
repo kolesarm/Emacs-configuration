@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-03-08 20:04:07 (kolesarm)>
+;; Time-stamp: <2014-11-19 15:16:17 (kolesarm)>
 
 ;; 1. IBUFFER
 (defalias 'list-buffers 'ibuffer)
@@ -10,7 +10,7 @@
 (desktop-save-mode 1)
 
 ;; save a bunch of variables to the desktop file for lists specify the
-;; len of the maximal saved data also Use M-x desktop-save once to
+;; length of the maximal saved data also Use M-x desktop-save once to
 ;; save the desktop. When it exists, Emacs updates it on every exit.
 (setq desktop-globals-to-save
       (append '((extended-command-history . 30)
@@ -36,7 +36,7 @@
 ;; 4. YASNIPPET
 (require 'yasnippet)
 (yas-global-mode t)
-; snippets are in '.emacs.d/snippets'
+; snippets are in .emacs.d/snippets
 
 ;; See: http://stackoverflow.com/questions/7619640/emacs-latex-yasnippet-why-are-newlines-inserted-after-a-snippet
 
@@ -58,24 +58,22 @@
 (add-hook 'tex-mode-hook (lambda () (setq ispell-parser 'tex)))
 (add-hook 'org-mode-hook (lambda () (setq ispell-parser 'tex)))
 
-;; 7. SKELETON-PAIR
-;; more sophisticated than skeleton-pair, https://github.com/Fuco1/smartparens
+;; 7. SMARTPARENS more sophisticated than skeleton-pair,
+;; https://github.com/Fuco1/smartparens. Install with package-install.
 ;; http://www.panix.com/~tehom/my-code/skel-recipe.txt also more sophisticated
-;; than autopair
+;; than autopair.
+
 (smartparens-global-mode t)
 ;; do not use \" for insert action but use it for any other action in latex mode
 (sp-local-pair 'latex-mode "\"" nil :actions '(:rem insert))
 (sp-local-pair 'latex-mode "'" nil :actions '(:rem insert))
 (sp-local-pair 'latex-mode "`" nil :actions '(:rem insert))
 
-;(sp-pair "'" nil :actions :rem) ; I'd like to write I'd, not I''d
-
 ; I'd like to write I'd, not I''d
 (sp-pair "'" nil :unless '(sp-point-after-word-p))
 (sp-pair "(" nil :unless '(sp-point-before-word-p))
 (sp-pair "[" nil :unless '(sp-point-before-word-p))
 (sp-pair "\"" nil :unless '(sp-point-before-word-p))
-
 
 ;; smartparens-mode doesn't activate itself in special buffers like R
 (add-hook 'ess-R-post-run-hook 'smartparens-mode)
@@ -125,9 +123,5 @@ This command does the reverse of `fill-region'."
         (linum-mode 1)
         (goto-line (read-number "Goto line: ")))
     (linum-mode -1)))
-
-;; 14. TRAMP
-; tramp complains with some recursive load error, so I disable it
-; (setq tramp-mode nil)
 
 (provide 'my-init-other)

@@ -205,6 +205,4 @@ depend on it being positive instead of the entry in `TeX-command-list'."
                            TeX-run-command nil t :help "Run Sweave") t)
             (setq TeX-command-default "Sweave")))
 
-
-
 (provide 'my-init-latex)

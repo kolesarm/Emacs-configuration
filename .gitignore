@@ -1,7 +1,17 @@
-auto-save-list/
-elpa/
-backups/
-cache/
-snippets/
+# .places is a list of point positions
 .places
+
+# yasnippets
+snippets/
+
+# backup files
+backups/
+
+auto-save-list/
+
+elpa/
+
+# ido
+cache/
+
 .gitmodules

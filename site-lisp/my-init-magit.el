@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-03-03 16:41:29 (kolesarm)>
+;; Time-stamp: <2014-11-19 15:23:53 (kolesarm)>
 
 (require 'magit)
 (global-set-key (kbd "C-x m") 'magit-status)
@@ -32,6 +32,5 @@
 
 ;; Show git diff information at right fringe
 (setq git-gutter-fr:side 'right-fringe)
-
 
 (provide 'my-init-magit)

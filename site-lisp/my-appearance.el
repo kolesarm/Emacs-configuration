@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-11-17 16:44:51 (kolesarm)>
+;; Time-stamp: <2014-11-19 14:48:52 (kolesarm)>
 
 ;; 1. FONT LOCK AND BELLS
 
@@ -18,7 +18,7 @@
 (setq line-number-mode t)
 (setq column-number-mode t)
 
-;; Show me empty lines after buffer end
+;; Display glyph in the fringe of each empty line at the end of the buffer
 (setq-default indicate-empty-lines t)
 
 ;; visible, rather than audible bell
@@ -26,8 +26,8 @@
 
 ;; 2. PAREN-MODE
 ;; http://emacs-fu.blogspot.com/2009/01/balancing-your-parentheses.html
-(show-paren-mode 1) ;turn paren-mode on
-(setq show-paren-delay 0) ;deactivate the delay
+(show-paren-mode 1)                     ;turn paren-mode on
+(setq show-paren-delay 0)               ;deactivate the delay
 
 ;; Highlight the whole expression not just the parentheses. If set to
 ;; parenthesis, only corresponding parentheses will be highlighted
@@ -58,9 +58,8 @@
 (require 'diminish)
 
 (eval-after-load "yasnippet" '(diminish 'yas-minor-mode)) ;; Yas
-;(eval-after-load "ethan-wspace" '(diminish 'ethan-wspace-mode)) ;; ew:mnlt
+(eval-after-load "ethan-wspace" '(diminish 'ethan-wspace-mode)) ;; ew:mnlt
 (eval-after-load "flyspell" '(diminish 'flyspell-mode)) ;; Fly
 (eval-after-load "git-gutter-fringe" '(diminish 'git-gutter-mode)) ;; GitGutter
-
 
 (provide 'my-appearance)

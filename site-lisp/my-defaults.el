@@ -1,6 +1,4 @@
-; Time-stamp: <2014-03-03 16:33:18 (kolesarm)>
-
-;; Some of the defaults copied from Sveen's
+; Time-stamp: <2014-11-19 14:43:18 (kolesarm)>
 
 ;; Set email to my actual email, not @fisher203.princeton.edu or whatever
 (setq user-mail-address "kolesarmi@googlemail.com")
@@ -40,12 +38,13 @@
 ;; Answering just 'y' or 'n' will do
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-;; UTF-8 please
-(setq locale-coding-system 'utf-8) ; pretty
-(set-terminal-coding-system 'utf-8) ; pretty
-(set-keyboard-coding-system 'utf-8) ; pretty
-(set-selection-coding-system 'utf-8) ; please
-(prefer-coding-system 'utf-8) ; with sugar on top
+;; UTF-8 
+(setq locale-coding-system 'utf-8) 
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-selection-coding-system 'utf-8) 
+(prefer-coding-system 'utf-8) 
+(add-hook 'before-save-hook (set-buffer-file-coding-system 'utf-8))
 
 ;; Don't remove text in active region if inserting text
 (delete-selection-mode -1)
@@ -79,11 +78,9 @@
 
 (require 'ethan-wspace)
 (global-ethan-wspace-mode 1)
+(setq mode-require-final-newline nil)
 ;; Handles "require-final-newline", "show-trailing-whitespace".
 ;; Ending file w  newline interferes with yasnippet, there it's ok
-
-;; Other Annoyances
-(add-hook 'before-save-hook (set-buffer-file-coding-system 'utf-8))
 
 (setq
   time-stamp-active t          ; do enable time-stamps
