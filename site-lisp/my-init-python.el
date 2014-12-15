@@ -7,4 +7,9 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-to-list 'auto-mode-alist '("\\.hs$" . haskell-mode))
 
+;; 3. MIT-SCHEME
+(require 'xscheme)
+
+(provide 'my-init-python)
+
 (provide 'my-init-python)

@@ -1,4 +1,4 @@
-; Time-stamp: <2014-11-19 14:43:18 (kolesarm)>
+; Time-stamp: <2014-12-15 11:55:10 (kolesarm)>
 
 ;; Set email to my actual email, not @fisher203.princeton.edu or whatever
 (setq user-mail-address "kolesarmi@googlemail.com")
@@ -38,12 +38,12 @@
 ;; Answering just 'y' or 'n' will do
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-;; UTF-8 
-(setq locale-coding-system 'utf-8) 
+;; UTF-8
+(setq locale-coding-system 'utf-8)
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
-(set-selection-coding-system 'utf-8) 
-(prefer-coding-system 'utf-8) 
+(set-selection-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
 (add-hook 'before-save-hook (set-buffer-file-coding-system 'utf-8))
 
 ;; Don't remove text in active region if inserting text
@@ -56,7 +56,11 @@
 ;; Undo/redo window configuration with C-c <left>/<right>
 (winner-mode t)
 ;; easier moving between windows
-(windmove-default-keybindings) ; default is shift
+;; (windmove-default-keybindings) ; default is shift
+;; window-numbering is better
+(require 'window-numbering)
+(custom-set-faces '(window-numbering-face ((t (:foreground "LightSlateGray" :weight bold)))))
+(window-numbering-mode 1)
 
 ;; Move cursor into between CamelCaseWords, since Emacs 23.2
 (global-subword-mode t)

@@ -42,3 +42,7 @@
 ; to track what exactly you were doing.
 
 (set-default 'ess-history-file nil) ; don't save history
+
+;; OZ
+(add-to-list 'load-path "/usr/share/mozart/elisp")
+(load "oz.elc")

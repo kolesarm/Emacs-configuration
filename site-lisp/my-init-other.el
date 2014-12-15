@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-11-19 15:16:17 (kolesarm)>
+;; Time-stamp: <2014-12-15 12:08:02 (kolesarm)>
 
 ;; 1. IBUFFER
 (defalias 'list-buffers 'ibuffer)
@@ -73,7 +73,8 @@
 (sp-pair "'" nil :unless '(sp-point-after-word-p))
 (sp-pair "(" nil :unless '(sp-point-before-word-p))
 (sp-pair "[" nil :unless '(sp-point-before-word-p))
-(sp-pair "\"" nil :unless '(sp-point-before-word-p))
+
+
 
 ;; smartparens-mode doesn't activate itself in special buffers like R
 (add-hook 'ess-R-post-run-hook 'smartparens-mode)
