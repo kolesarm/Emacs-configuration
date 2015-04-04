@@ -15,3 +15,7 @@ elpa/
 cache/
 
 .gitmodules
+
+smex-items
+
+url/

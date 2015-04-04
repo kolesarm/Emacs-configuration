@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-11-19 15:25:31 (kolesarm)>
+;; Time-stamp: <2015-01-23 10:40:46 (kolesarm)>
 
 ;; 1. EMACS LOAD PATH. All custom code in ~/.emacs.d/site-lisp
 (let ((default-directory "~/.emacs.d/site-lisp/"))
@@ -47,5 +47,8 @@
 (load "my-init-latex")                    ; need to update
 (eval-after-load 'org '(require 'my-org)) ; need to update
 
-; 4. INITIAL BUFFER
+;; 4. INITIAL BUFFER
 (setq initial-buffer-choice "/home/kolesarm/backuplog.org")
+
+;; 5. START SERVER
+(server-start)

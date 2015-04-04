@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-11-14 10:36:18 (kolesarm)>
+;; Time-stamp: <2015-01-27 12:30:58 (kolesarm)>
 
 ;;;; ORG-MODE
 ; automatically in Emacs 22
@@ -12,7 +12,6 @@
 ;; org-mode: Don't ruin S-arrow to switch windows please (use M-+ and M--
 ;; instead to toggle) I left S-<arrow> on
 ;; (setq org-replace-disputed-keys t)
-
 
 (setq org-directory "~/manuals/")
 
@@ -60,9 +59,9 @@
                "<comment>\n?\n</comment>"))
 
 ;; MobileOrg
-;; (setq org-mobile-directory "~/docs/Dropbox/org")
-;; (setq org-mobile-files '("~/manuals/cooking/recipes.org"))
-;; (setq org-mobile-inbox-for-pull "~/manuals/from-mobile.org")
+(setq org-mobile-directory "~/Dropbox/mobile-org")
+(setq org-mobile-files '("~/manuals/cooking/recipes.org"))
+(setq org-mobile-inbox-for-pull "~/manuals/from-mobile.org")
 
 
 ;(setq org-agenda-files
@@ -90,7 +89,9 @@
 ; %a: annotation %i: initial content %t timestamp, date only %T time also
 ; ? cursor, %^T prompt for date %^{PROPERTY}p prompt for property
 
-
-
+(eval-after-load "org"
+  '(progn
+     ;; Change .pdf association directly within the alist
+     (setcdr (assoc "\\.pdf\\'" org-file-apps) "evince %s")))
 
 (provide 'my-org)

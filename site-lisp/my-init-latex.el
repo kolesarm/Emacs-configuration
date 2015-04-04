@@ -56,7 +56,7 @@
       (add-to-list
        'reftex-ref-style-alist
        '("Cleveref" "cleveref"
-         (("\\cref" ?c) ("\\Cref" ?C) ("\\cpageref" ?d) ("\\Cpageref" ?D)))))
+         (("\\Cref" ?C) ("\\cref" ?c) ("\\cpageref" ?d) ("\\Cpageref" ?D)))))
       (add-to-list 'reftex-ref-style-default-list "Cleveref")
       (setq reftex-label-alist '(AMSTeX)) ; not sure why it doesn't parse amstex
                                         ; automatically
@@ -76,14 +76,13 @@
 ;http://soundandcomplete.com/2010/05/13/emacs-as-the-ultimate-latex-editor/
 
 ;; 3. New stuff--everything above just copied from old .emacs
-;; 3.1 STYLE FILES
-(setq TeX-style-path '("/var/lib/auctex/emacs23"
-                      "/usr/share/emacs/23.2/site-lisp/auctex/style"
-                      "/home/kolesarm/.emacs.d/auctex/auto"
-                      "/home/kolesarm/.emacs.d/auctex/style"
-                      "/home/kolesarm/.emacs.d/site-lisp/myplugins/auctex-styles"
-                      "auto"
-                      "style"))
+;; List of directories to search for AUCTeX style files. Each must end with a slash.
+(setq TeX-style-path '("/var/lib/auctex/emacs24"
+                       "/usr/share/emacs/site-lisp/auctex/style"
+                      "/home/kolesarm/.emacs.d/site-lisp/auctex-styles/"
+                      "auto/"
+                      "style/"))
+
 ;; 3.2 Inserts {} automaticly on _ and ^ (no need for custom command)
 (setq TeX-electric-sub-and-superscript t)
 
@@ -158,7 +157,7 @@
       (lambda nil
     (local-set-key (kbd "C-c C-t x") 'TeX-toggle-escape)))
 
-;; 5. latexmk
+;; 5. latexmk and arara
 
 ;; Add latexmk option to TeX-command-list and make it default
 (add-hook 'LaTeX-mode-hook
@@ -166,6 +165,12 @@
             (push
              '("LaTeXmk" "latexmk -pdf %s" TeX-run-TeX nil t
                :help "Run latexmk on file") TeX-command-list)
+            (push
+             '("arara" "arara --verbose %s" TeX-run-TeX nil t
+               :help "Run arara on file") TeX-command-list)
+            (push
+             '("compileboth" "compileboth %s" TeX-run-TeX nil t
+               :help "Generate questions and answers") TeX-command-list)
             (setq TeX-command-default "LaTeXmk")))
 
 

@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-12-15 12:08:02 (kolesarm)>
+;; Time-stamp: <2015-04-04 12:12:52 (kolesarm)>
 
 ;; 1. IBUFFER
 (defalias 'list-buffers 'ibuffer)
@@ -74,8 +74,6 @@
 (sp-pair "(" nil :unless '(sp-point-before-word-p))
 (sp-pair "[" nil :unless '(sp-point-before-word-p))
 
-
-
 ;; smartparens-mode doesn't activate itself in special buffers like R
 (add-hook 'ess-R-post-run-hook 'smartparens-mode)
 
@@ -124,5 +122,14 @@ This command does the reverse of `fill-region'."
         (linum-mode 1)
         (goto-line (read-number "Goto line: ")))
     (linum-mode -1)))
+
+;; 14. SMEX
+(require 'smex) ; Not needed if you use package.el
+(global-set-key (kbd "M-x") 'smex)
+;; runs Smex, limited to commands that are relevant to the active major mode.
+;; Try it with Dired or Magit.
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 (provide 'my-init-other)
