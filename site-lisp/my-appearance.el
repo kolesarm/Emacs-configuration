@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-11-19 14:48:52 (kolesarm)>
+;; Time-stamp: <2015-07-17 13:08:25 (kolesarm)>
 
 ;; 1. FONT LOCK AND BELLS
 
@@ -32,6 +32,16 @@
 ;; Highlight the whole expression not just the parentheses. If set to
 ;; parenthesis, only corresponding parentheses will be highlighted
 (setq show-paren-style 'expression)
+
+;; 2.2 Rainbow delimiters
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'LaTeX-mode-hook #'rainbow-delimiters-mode)
+(set-face-attribute 'rainbow-delimiters-unmatched-face nil
+                    :foreground 'unspecified
+                    :inherit 'error)
+
+(setq rainbow-delimiters-max-face-count 1)
 
 ;; 3. COLORS AND FONTS
 

@@ -1,4 +1,4 @@
-; Time-stamp: <2014-12-15 11:55:10 (kolesarm)>
+; Time-stamp: <2015-07-17 13:15:49 (kolesarm)>
 
 ;; Set email to my actual email, not @fisher203.princeton.edu or whatever
 (setq user-mail-address "kolesarmi@googlemail.com")
@@ -59,7 +59,10 @@
 ;; (windmove-default-keybindings) ; default is shift
 ;; window-numbering is better
 (require 'window-numbering)
-(custom-set-faces '(window-numbering-face ((t (:foreground "LightSlateGray" :weight bold)))))
+;; (custom-set-faces '(window-numbering-face ((t (:foreground "LightSlateGray" :weight bold)))))
+(set-face-attribute 'window-numbering-face nil :foreground "LightSlateGray" :weight 'bold)
+
+
 (window-numbering-mode 1)
 
 ;; Move cursor into between CamelCaseWords, since Emacs 23.2
