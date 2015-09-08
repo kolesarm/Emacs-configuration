@@ -1,21 +1,19 @@
 # .places is a list of point positions
 .places
 
-# yasnippets
-snippets/
+auto-save-list/
 
 # backup files
 backups/
 
-auto-save-list/
-
-elpa/
-
 # ido
 cache/
 
-.gitmodules
-
+elpa/
 smex-items
 
+# yasnippets
+snippets/
+
+.gitmodules
 url/
