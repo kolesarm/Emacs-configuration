@@ -1,7 +1,8 @@
-; Time-stamp: <2015-07-17 13:15:49 (kolesarm)>
+; Time-stamp: <2015-08-09 12:56:06 (kolesarm)>
 
 ;; Set email to my actual email, not @fisher203.princeton.edu or whatever
 (setq user-mail-address "kolesarmi@googlemail.com")
+(setq user-full-name "Michal Kolesár")
 
 ;; Write backup files to own directory
 (setq backup-directory-alist
@@ -61,7 +62,6 @@
 (require 'window-numbering)
 ;; (custom-set-faces '(window-numbering-face ((t (:foreground "LightSlateGray" :weight bold)))))
 (set-face-attribute 'window-numbering-face nil :foreground "LightSlateGray" :weight 'bold)
-
 
 (window-numbering-mode 1)
 

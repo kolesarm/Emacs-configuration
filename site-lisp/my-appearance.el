@@ -1,4 +1,4 @@
-;; Time-stamp: <2015-07-17 13:08:25 (kolesarm)>
+;; Time-stamp: <2015-07-17 13:24:20 (kolesarm)>
 
 ;; 1. FONT LOCK AND BELLS
 
@@ -49,7 +49,8 @@
 ;; emacs-color-theme-solarized, simply
 (load-theme 'solarized-light t) ; M-x disable-theme disables it
 
-; Anonymous pro is designed for coding. O,0 and 1,l look distinct.
+; Anonymous pro is designed for coding. O,0 and 1,l look distinct. Source Code
+; Pro is an alternative: (set-frame-font "Source Code Pro-16" nil t)
 (when (window-system)
   (set-frame-font "Anonymous Pro")
   (set-face-attribute 'default nil :family "Anonymous Pro" :height 130)

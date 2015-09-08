@@ -1,7 +1,17 @@
-;; Time-stamp: <2015-01-27 12:30:58 (kolesarm)>
+;; Time-stamp: <2015-07-28 12:19:26 (kolesarm)>
 
 ;;;; ORG-MODE
-; automatically in Emacs 22
+;; automatically in Emacs 22
+
+;; .org files use org-mode by default since Emacs 22.2,
+;; (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-cb" 'org-iswitchb)
+
+
 ;(require 'org-latex) ;make latex work!
 ; org-beamer --- for some reason it's not part of my emacs build
 ;(require 'org-beamer)
@@ -28,11 +38,7 @@
   (lambda ()
     (define-key org-mode-map "\C-c+" 'org-ctrl-c-minus))) ;reftex overwrites this
 
-(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cc" 'org-capture)
-(global-set-key "\C-cb" 'org-iswitchb)
+
 (setq org-log-done t)
 
 ; org-babel
