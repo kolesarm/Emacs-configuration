@@ -1,4 +1,4 @@
-;; Time-stamp: <2015-07-17 13:08:18 (kolesarm)>
+;; Time-stamp: <2015-12-23 16:24:17 (kolesarm)>
 
 ;; 1. EMACS LOAD PATH. All custom code in ~/.emacs.d/site-lisp
 (let ((default-directory "~/.emacs.d/site-lisp/"))
@@ -24,12 +24,30 @@
 (setq inhibit-startup-echo-area-message "kolesarm")
 
 ;; 3. PACKAGES IN EMACS 24
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(require 'package)                      ; load package manager
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+;; Make a list of the packages you want
+(setq my-package-list '(;; gnu packages
+                        ;; auctex
+                        ;; melpa packages
+                        window-numbering
+                        ethan-wspace
+                        diminish
+                        anzu
+                        color-theme-solarized
+                        browse-kill-ring
+                        rainbow-delimiters
+                        smex))
 (package-initialize)                    ; initialize ELPA packages
+
+;; (unless (every #'package-installed-p my-package-list)
+;;   (message "Not all packages installed"))
 
 ;; 4. CUSTOM SCRIPTS
 ;; Change defaults and appearance
+
 (require 'my-defaults) ; default variable settings
 (require 'my-appearance)
 

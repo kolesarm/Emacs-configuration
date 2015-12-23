@@ -1,4 +1,4 @@
-;; Time-stamp: <2015-07-28 12:19:26 (kolesarm)>
+;; Time-stamp: <2015-11-02 17:15:06 (kolesarm)>
 
 ;;;; ORG-MODE
 ;; automatically in Emacs 22
@@ -69,6 +69,8 @@
 (setq org-mobile-files '("~/manuals/cooking/recipes.org"))
 (setq org-mobile-inbox-for-pull "~/manuals/from-mobile.org")
 
+
+(setq org-ellipsis "⤵")
 
 ;(setq org-agenda-files
 ;      (list "~/org/research.org" "~/org/teaching.org" "~/org/work.org" "~/org/personal.org"))

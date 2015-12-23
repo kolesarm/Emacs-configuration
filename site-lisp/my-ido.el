@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-03-03 16:35:18 (kolesarm)>
+;; Time-stamp: <2015-12-23 16:21:43 (kolesarm)>
 
 ;; 1. IDO-MODE (included with emacs23)
 ;; Interactively DO things:
@@ -24,6 +24,11 @@
 ;; when using ido, the confirmation is rather annoying...
 (setq confirm-nonexistent-file-or-buffer nil)
 
+;; Completion hints for files and buffers buffers
+(setq ido-file-extensions-order '(".tex" ".R" ".r" ".sh" ".bib" ".org"
+                                  ".py" ".el" ".pdf"
+                                  ".txt" ".html"))
+
 ;; ~/ sends you home.
 
 ;; 2. RECENTF (included with emacs21)
@@ -47,5 +52,14 @@
 
 ;; Disable undo in Buffer-mode
 (add-hook 'Buffer-menu-mode-hook 'buffer-disable-undo)
+
+;; 3. BROWSE KILL RING
+(require 'browse-kill-ring)
+
+;; M-y key binding will activate browse-kill-ring iff the normal behavior is not
+;; available, i.e., when the last command was not a 'yank'.
+(browse-kill-ring-default-keybindings)
+
+
 
 (provide 'my-ido)

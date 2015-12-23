@@ -1,4 +1,4 @@
-;; Time-stamp: <2015-07-17 13:24:20 (kolesarm)>
+;; Time-stamp: <2015-12-23 16:17:17 (kolesarm)>
 
 ;; 1. FONT LOCK AND BELLS
 
@@ -26,6 +26,7 @@
 
 ;; 2. PAREN-MODE
 ;; http://emacs-fu.blogspot.com/2009/01/balancing-your-parentheses.html
+;; Highlight matched/mismatched paren
 (show-paren-mode 1)                     ;turn paren-mode on
 (setq show-paren-delay 0)               ;deactivate the delay
 
@@ -45,9 +46,10 @@
 
 ;; 3. COLORS AND FONTS
 
-;; Prior to Emacs 24, use color-theme. Now install
-;; emacs-color-theme-solarized, simply
-(load-theme 'solarized-light t) ; M-x disable-theme disables it
+;; Prior to Emacs 24, use color-theme. Now install color-theme-solarized, simply
+(load-theme 'solarized t) ; M-x disable-theme disables it
+;; Used to be solarized-light
+
 
 ; Anonymous pro is designed for coding. O,0 and 1,l look distinct. Source Code
 ; Pro is an alternative: (set-frame-font "Source Code Pro-16" nil t)
@@ -65,6 +67,13 @@
                                :size 12.0
                                :weight 'normal)))
 
+;; 4. ANZU MODE for displaying number of seach matches
+(require 'anzu)
+(global-anzu-mode t)
+
+(set-face-attribute 'anzu-mode-line nil
+                    :foreground "dark slate gray" :weight 'bold)
+
 ;; 4. UNCLUTTER THE MODELINE
 (require 'diminish)
 
@@ -72,5 +81,9 @@
 (eval-after-load "ethan-wspace" '(diminish 'ethan-wspace-mode)) ;; ew:mnlt
 (eval-after-load "flyspell" '(diminish 'flyspell-mode)) ;; Fly
 (eval-after-load "git-gutter-fringe" '(diminish 'git-gutter-mode)) ;; GitGutter
+(eval-after-load "anzu-mode" '(diminish 'anzu-mode)) ;;
+
 
 (provide 'my-appearance)
+
+;; 5. Reset font lock:   (normal-mode) (font-lock-fontify-buffer)

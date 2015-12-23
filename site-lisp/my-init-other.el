@@ -1,4 +1,4 @@
-;; Time-stamp: <2015-04-04 12:12:52 (kolesarm)>
+;; Time-stamp: <2015-12-23 13:07:58 (kolesarm)>
 
 ;; 1. IBUFFER
 (defalias 'list-buffers 'ibuffer)
@@ -77,9 +77,9 @@
 ;; smartparens-mode doesn't activate itself in special buffers like R
 (add-hook 'ess-R-post-run-hook 'smartparens-mode)
 
-;; 8. CONKEROR AS DEFAULT BROWSER
+;; 8. DEFAULT BROWSER
 (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "/usr/bin/conkeror")
+      browse-url-generic-program "/usr/bin/iceweasel")
 
 ;; Webjumps
 (global-set-key (kbd "C-x g") 'webjump)
@@ -95,8 +95,8 @@
 
 ;; 9. UNFILL PARAGRAPH
 (defun unfill-region (start end)
-  "Replace newline chars in region by single spaces.
-This command does the reverse of `fill-region'."
+  "Replace newline chars in region by single spaces. This command
+does the reverse of `fill-region'."
   (interactive "r")
   (let ((fill-column 90002000))
     (fill-region start end)))
@@ -123,8 +123,8 @@ This command does the reverse of `fill-region'."
         (goto-line (read-number "Goto line: ")))
     (linum-mode -1)))
 
-;; 14. SMEX
-(require 'smex) ; Not needed if you use package.el
+;; 14. SMEX, from MELPA
+(require 'smex)
 (global-set-key (kbd "M-x") 'smex)
 ;; runs Smex, limited to commands that are relevant to the active major mode.
 ;; Try it with Dired or Magit.

@@ -1,4 +1,4 @@
-# .places is a list of point positions
+# .places is a list of point positions from saveplace package
 .places
 
 auto-save-list/
@@ -17,3 +17,5 @@ snippets/
 
 .gitmodules
 url/
+
+srecode-map.el

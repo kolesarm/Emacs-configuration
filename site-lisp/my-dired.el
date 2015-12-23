@@ -1,7 +1,10 @@
-;; Time-stamp: <2014-03-03 15:54:42 (kolesarm)>
+;; Time-stamp: <2015-12-23 11:15:19 (kolesarm)>
 
 ;; I want C-x C-j to run dired-jump, it's in dired-x
 (require 'dired-x)
+
+(put 'dired-find-alternate-file 'disabled nil) ; don't open a new dired buffer
+                                               ; i.e. enable `a' command
 
 ;; Reload dired after making changes
 (--each '(dired-do-rename
