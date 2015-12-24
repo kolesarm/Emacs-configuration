@@ -1,4 +1,4 @@
-;; Time-stamp: <2015-11-02 17:15:06 (kolesarm)>
+;; Time-stamp: <2015-12-23 17:23:06 (kolesarm)>
 
 ;;;; ORG-MODE
 ;; automatically in Emacs 22
@@ -32,8 +32,9 @@
 (add-to-list 'org-latex-packages-alist '("" "listings"))
 (add-to-list 'org-latex-packages-alist '("" "color"))
 
-(add-hook 'org-mode-hook 'turn-on-reftex) ; reftex
-;(add-hook 'org-mode-hook 'turn-on-org-cdlatex) ;latex shortcuts don't want cdlatex, perhaps? Else I need to download it, I think.
+(add-hook 'org-mode-hook 'turn-on-reftex) ; reftex (add-hook 'org-mode-hook
+;'turn-on-org-cdlatex) ;latex shortcuts don't want cdlatex, perhaps? Else I need
+;to download it, I think.
 (add-hook 'org-mode-hook
   (lambda ()
     (define-key org-mode-map "\C-c+" 'org-ctrl-c-minus))) ;reftex overwrites this

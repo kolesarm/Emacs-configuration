@@ -1,4 +1,4 @@
-;; Time-stamp: <2015-12-23 16:24:17 (kolesarm)>
+;; Time-stamp: <2015-12-24 04:07:56 (kolesarm)>
 
 ;; 1. EMACS LOAD PATH. All custom code in ~/.emacs.d/site-lisp
 (let ((default-directory "~/.emacs.d/site-lisp/"))
@@ -39,6 +39,7 @@
                         color-theme-solarized
                         browse-kill-ring
                         rainbow-delimiters
+                        git-gutter-fringe
                         smex))
 (package-initialize)                    ; initialize ELPA packages
 
@@ -52,12 +53,12 @@
 (require 'my-appearance)
 
 ;; Setup extensions
-(require 'my-init-other) ;; misc extensions
-(require 'my-ido) ; ido and recentf
-(require 'my-dired) ; Directory Editor
+(require 'my-init-other)                ; misc extensions
+(require 'my-ido)                       ; ido and recentf
+(require 'my-dired)                     ; Directory Editor
 
 ;; Language-specific
-(load "my-init-python") ; python, haskell
+(load "my-init-python")                 ; python, haskell
 (load "my-init-magit")
 
 ;; need to updated these three

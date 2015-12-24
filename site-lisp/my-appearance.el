@@ -1,4 +1,4 @@
-;; Time-stamp: <2015-12-23 16:17:17 (kolesarm)>
+;; Time-stamp: <2015-12-23 16:51:14 (kolesarm)>
 
 ;; 1. FONT LOCK AND BELLS
 
@@ -81,8 +81,7 @@
 (eval-after-load "ethan-wspace" '(diminish 'ethan-wspace-mode)) ;; ew:mnlt
 (eval-after-load "flyspell" '(diminish 'flyspell-mode)) ;; Fly
 (eval-after-load "git-gutter-fringe" '(diminish 'git-gutter-mode)) ;; GitGutter
-(eval-after-load "anzu-mode" '(diminish 'anzu-mode)) ;;
-
+(diminish 'anzu-mode)
 
 (provide 'my-appearance)
 

@@ -11,5 +11,3 @@
 (require 'xscheme)
 
 (provide 'my-init-python)
-
-(provide 'my-init-python)
