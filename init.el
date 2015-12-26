@@ -1,4 +1,4 @@
-;; Time-stamp: <2015-12-24 04:07:56 (kolesarm)>
+;; Time-stamp: <2015-12-26 08:14:16 (kolesarm)>
 
 ;; 1. EMACS LOAD PATH. All custom code in ~/.emacs.d/site-lisp
 (let ((default-directory "~/.emacs.d/site-lisp/"))
@@ -38,13 +38,9 @@
                         anzu
                         color-theme-solarized
                         browse-kill-ring
-                        rainbow-delimiters
                         git-gutter-fringe
                         smex))
 (package-initialize)                    ; initialize ELPA packages
-
-;; (unless (every #'package-installed-p my-package-list)
-;;   (message "Not all packages installed"))
 
 ;; 4. CUSTOM SCRIPTS
 ;; Change defaults and appearance
@@ -71,3 +67,8 @@
 
 ;; 5. START SERVER
 (server-start)
+
+;; 6. TELL ME ABOUT PACKAGES
+(if (every #'package-installed-p my-package-list)
+    (message "All packages installed")
+  (display-warning :warning "Not all packages installed"))

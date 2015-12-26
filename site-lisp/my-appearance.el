@@ -1,4 +1,4 @@
-;; Time-stamp: <2015-12-23 16:51:14 (kolesarm)>
+;; Time-stamp: <2015-12-26 08:13:37 (kolesarm)>
 
 ;; 1. FONT LOCK AND BELLS
 
@@ -33,16 +33,10 @@
 ;; Highlight the whole expression not just the parentheses. If set to
 ;; parenthesis, only corresponding parentheses will be highlighted
 (setq show-paren-style 'expression)
-
-;; 2.2 Rainbow delimiters
-(require 'rainbow-delimiters)
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'LaTeX-mode-hook #'rainbow-delimiters-mode)
-(set-face-attribute 'rainbow-delimiters-unmatched-face nil
-                    :foreground 'unspecified
-                    :inherit 'error)
-
-(setq rainbow-delimiters-max-face-count 1)
+(set-face-attribute 'show-paren-match-face nil
+        :weight 'bold :italic 'normal :background "gainsboro")
+(set-face-attribute 'show-paren-mismatch-face nil
+                    :weight 'bold :slant 'normal :background "red")
 
 ;; 3. COLORS AND FONTS
 
@@ -81,8 +75,7 @@
 (eval-after-load "ethan-wspace" '(diminish 'ethan-wspace-mode)) ;; ew:mnlt
 (eval-after-load "flyspell" '(diminish 'flyspell-mode)) ;; Fly
 (eval-after-load "git-gutter-fringe" '(diminish 'git-gutter-mode)) ;; GitGutter
+(eval-after-load "subword" '(diminish 'subword-mode)) ;; , (CamelCaseMode)
 (diminish 'anzu-mode)
 
 (provide 'my-appearance)
-
-;; 5. Reset font lock:   (normal-mode) (font-lock-fontify-buffer)

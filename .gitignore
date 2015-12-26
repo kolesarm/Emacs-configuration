@@ -3,7 +3,7 @@
 
 auto-save-list/
 
-# backup files
+# backup files, set in my-defaults.el
 backups/
 
 # ido

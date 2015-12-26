@@ -1,4 +1,4 @@
-; Time-stamp: <2015-12-23 11:43:53 (kolesarm)>
+; Time-stamp: <2015-12-26 07:53:24 (kolesarm)>
 
 ;; Set email to my actual email, not @fisher203.princeton.edu or whatever
 (setq user-mail-address "kolesarmi@googlemail.com")
@@ -55,12 +55,15 @@
 (set-default 'fill-column 80)
 
 ;; WINNER-MODE: Undo/redo window configuration with C-c <left>/<right>
+;; Part of Emacs 23.2 and up
 (winner-mode t)
 
-;; WINDMOVE comes with Emacs21. WINDOW-NUMBERING is better
+;; WINDMOVE comes with Emacs21. WINDOW-NUMBERING is better, part of MELPA
 (require 'window-numbering)
+
+;; Solarized base03 color
 (set-face-attribute 'window-numbering-face nil
-                    :foreground "LightSlateGray" :weight 'bold)
+                    :foreground "#002b36" :weight 'bold)
 (window-numbering-mode 1)
 
 ;; Move cursor into between CamelCaseWords, since Emacs 23.2
@@ -97,7 +100,7 @@
 
 ;; Ask for confirmation before quitting Emacs
 (add-hook 'kill-emacs-query-functions
-          (lambda () (y-or-n-p "You really want to kill me? "))
+          (lambda () (y-or-n-p "You really want to kill me?"))
           'append)
 
 (provide 'my-defaults)
