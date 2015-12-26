@@ -1,4 +1,4 @@
-;; Time-stamp: <2015-12-26 08:14:16 (kolesarm)>
+;; Time-stamp: <2015-12-26 11:59:03 (kolesarm)>
 
 ;; 1. EMACS LOAD PATH. All custom code in ~/.emacs.d/site-lisp
 (let ((default-directory "~/.emacs.d/site-lisp/"))
@@ -45,20 +45,20 @@
 ;; 4. CUSTOM SCRIPTS
 ;; Change defaults and appearance
 
-(require 'my-defaults) ; default variable settings
+(require 'my-defaults)                  ; default variable settings
 (require 'my-appearance)
 
 ;; Setup extensions
 (require 'my-init-other)                ; misc extensions
-(require 'my-ido)                       ; ido and recentf
+(require 'my-ido)                       ; ido, recentf, browse-kill-ring
 (require 'my-dired)                     ; Directory Editor
 
 ;; Language-specific
-(load "my-init-python")                 ; python, haskell
-(load "my-init-magit")
+(require 'my-init-magit)
+(require 'my-init-other-languages)        ; python, haskell, scheme
+(require 'my-init-matlab)                 ; matlab and ESS
 
-;; need to updated these three
-(load "my-init-matlab")                   ; matlab and ESS, need to update
+;; need to updated these
 (load "my-init-latex")                    ; need to update
 (eval-after-load 'org '(require 'my-org)) ; need to update
 

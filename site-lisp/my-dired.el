@@ -1,6 +1,7 @@
-;; Time-stamp: <2015-12-24 04:03:45 (kolesarm)>
+;; Time-stamp: <2015-12-26 09:48:21 (kolesarm)>
 
-;; I want C-x C-j to run dired-jump, it's in dired-x
+;; I want C-x C-j to run dired-jump, it's in dired-x. These are eXtra features
+;; for dired mode, that come with Emacs.
 (require 'dired-x)
 
 (put 'dired-find-alternate-file 'disabled nil) ; don't open a new dired buffer
