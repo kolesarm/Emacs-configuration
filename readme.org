@@ -1,1 +1,15 @@
 My emacs configuration
+
+Requires the following MELPA packages:
+- anzu
+- browse-kill-ring
+- color-theme-solarized
+- diminish
+- ethan-wspace
+- git-gutter-fringe
+- matlab-mode
+- smartparens
+- smex
+- todotxt-mode
+- window-numbering
+- yasnippet

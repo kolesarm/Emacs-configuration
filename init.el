@@ -1,4 +1,4 @@
-;; Time-stamp: <2015-12-26 11:59:03 (kolesarm)>
+;; Time-stamp: <2015-12-26 12:34:39 (kolesarm)>
 
 ;; 1. EMACS LOAD PATH. All custom code in ~/.emacs.d/site-lisp
 (let ((default-directory "~/.emacs.d/site-lisp/"))
@@ -32,14 +32,18 @@
 (setq my-package-list '(;; gnu packages
                         ;; auctex
                         ;; melpa packages
-                        window-numbering
-                        ethan-wspace
-                        diminish
                         anzu
-                        color-theme-solarized
                         browse-kill-ring
+                        color-theme-solarized
+                        diminish
+                        ethan-wspace
                         git-gutter-fringe
-                        smex))
+                        matlab-mode
+                        smartparens
+                        smex
+                        todotxt-mode
+                        window-numbering
+                        yasnippet))
 (package-initialize)                    ; initialize ELPA packages
 
 ;; 4. CUSTOM SCRIPTS
@@ -57,10 +61,11 @@
 (require 'my-init-magit)
 (require 'my-init-other-languages)        ; python, haskell, scheme
 (require 'my-init-matlab)                 ; matlab and ESS
+(eval-after-load 'org '(require 'my-org)) ; org and todotxt
 
 ;; need to updated these
 (load "my-init-latex")                    ; need to update
-(eval-after-load 'org '(require 'my-org)) ; need to update
+
 
 ;; 4. INITIAL BUFFER
 (setq initial-buffer-choice "/home/kolesarm/backuplog.org")
