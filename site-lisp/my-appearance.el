@@ -1,4 +1,4 @@
-;; Time-stamp: <2015-12-26 08:13:37 (kolesarm)>
+;; Time-stamp: <2015-12-26 08:16:58 (kolesarm)>
 
 ;; 1. FONT LOCK AND BELLS
 
@@ -52,7 +52,7 @@
   (set-face-attribute 'default nil :family "Anonymous Pro" :height 130)
   (set-face-font 'default "Anonymous Pro"))
 
-; fall back on DejaVu for unicode characters
+; fall back on DejaVu for Unicode characters
 (when (functionp 'set-fontset-font)
   (set-fontset-font "fontset-default"
                     'unicode
@@ -61,12 +61,12 @@
                                :size 12.0
                                :weight 'normal)))
 
-;; 4. ANZU MODE for displaying number of seach matches
+;; 4. ANZU MODE for displaying number of search matches
 (require 'anzu)
 (global-anzu-mode t)
 
 (set-face-attribute 'anzu-mode-line nil
-                    :foreground "dark slate gray" :weight 'bold)
+                    :foreground "dim gray" :weight 'bold)
 
 ;; 4. UNCLUTTER THE MODELINE
 (require 'diminish)
