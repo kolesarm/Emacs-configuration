@@ -6,6 +6,7 @@ Requires the following MELPA packages:
 - color-theme-solarized
 - diminish
 - ethan-wspace
+- flycheck
 - git-gutter-fringe
 - matlab-mode
 - smartparens

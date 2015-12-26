@@ -1,4 +1,4 @@
-; Time-stamp: <2015-12-26 07:53:24 (kolesarm)>
+; Time-stamp: <2015-12-26 14:31:15 (kolesarm)>
 
 ;; Set email to my actual email, not @fisher203.princeton.edu or whatever
 (setq user-mail-address "kolesarmi@googlemail.com")
@@ -104,3 +104,4 @@
           'append)
 
 (provide 'my-defaults)
+;;; my-defaults.el ends here

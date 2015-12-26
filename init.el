@@ -1,4 +1,4 @@
-;; Time-stamp: <2015-12-26 12:34:39 (kolesarm)>
+;; Time-stamp: <2015-12-26 14:33:59 (kolesarm)>
 
 ;; 1. EMACS LOAD PATH. All custom code in ~/.emacs.d/site-lisp
 (let ((default-directory "~/.emacs.d/site-lisp/"))
@@ -37,6 +37,7 @@
                         color-theme-solarized
                         diminish
                         ethan-wspace
+                        flycheck
                         git-gutter-fringe
                         matlab-mode
                         smartparens
@@ -62,9 +63,8 @@
 (require 'my-init-other-languages)        ; python, haskell, scheme
 (require 'my-init-matlab)                 ; matlab and ESS
 (eval-after-load 'org '(require 'my-org)) ; org and todotxt
-
-;; need to updated these
-(load "my-init-latex")                    ; need to update
+(require 'my-init-latex)                  ; latex
+(require 'my-init-flymake)                ; flymake
 
 
 ;; 4. INITIAL BUFFER
@@ -77,3 +77,5 @@
 (if (every #'package-installed-p my-package-list)
     (message "All packages installed")
   (display-warning :warning "Not all packages installed"))
+
+;;; init.el ends here
