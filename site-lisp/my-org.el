@@ -1,4 +1,4 @@
-;; Time-stamp: <2015-12-26 12:22:23 (kolesarm)>
+;; Time-stamp: <2015-12-26 14:40:26 (kolesarm)>
 
 ;;; 1. ORG-MODE
 
@@ -71,3 +71,4 @@
       (expand-file-name "/home/kolesarm/Dropbox/todo/todo.txt"))
 
 (provide 'my-org)
+;;; my-org.el ends here

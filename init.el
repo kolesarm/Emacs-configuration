@@ -1,4 +1,4 @@
-;; Time-stamp: <2015-12-26 14:33:59 (kolesarm)>
+;; Time-stamp: <2016-01-15 11:20:06 (kolesarm)>
 
 ;; 1. EMACS LOAD PATH. All custom code in ~/.emacs.d/site-lisp
 (let ((default-directory "~/.emacs.d/site-lisp/"))
@@ -29,9 +29,7 @@
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 ;; Make a list of the packages you want
-(setq my-package-list '(;; gnu packages
-                        ;; auctex
-                        ;; melpa packages
+(setq my-package-list '(;; gnu packages: auctex melpa packages:
                         anzu
                         browse-kill-ring
                         color-theme-solarized
@@ -77,5 +75,3 @@
 (if (every #'package-installed-p my-package-list)
     (message "All packages installed")
   (display-warning :warning "Not all packages installed"))
-
-;;; init.el ends here

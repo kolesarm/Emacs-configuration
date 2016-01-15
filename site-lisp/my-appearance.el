@@ -1,4 +1,4 @@
-;; Time-stamp: <2015-12-26 08:16:58 (kolesarm)>
+;; Time-stamp: <2015-12-27 04:47:50 (kolesarm)>
 
 ;; 1. FONT LOCK AND BELLS
 
@@ -79,3 +79,4 @@
 (diminish 'anzu-mode)
 
 (provide 'my-appearance)
+;;; my-appearance.el ends here

@@ -1,4 +1,4 @@
-;; Time-stamp: <2015-12-26 09:48:21 (kolesarm)>
+;; Time-stamp: <2015-12-27 04:51:58 (kolesarm)>
 
 ;; I want C-x C-j to run dired-jump, it's in dired-x. These are eXtra features
 ;; for dired mode, that come with Emacs.
@@ -25,6 +25,7 @@
   (let ((name (buffer-name)))
     (if (not (string-match "/$" name))
         (rename-buffer (concat name "/") t))))
+
 (add-hook 'dired-mode-hook 'ensure-buffer-name-ends-in-slash)
 (add-hook 'dired-mode-hook
           (lambda()
@@ -58,3 +59,4 @@
 (define-key dired-mode-map (kbd "E") 'xah-open-in-external-app)
 
 (provide 'my-dired)
+;;; my-dired.el ends here
