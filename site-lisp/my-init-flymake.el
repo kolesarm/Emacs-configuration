@@ -36,7 +36,7 @@
 ;; - trailing_whitespace_linter :: check there are no trailing whitespace characters.
 
 (customize-set-variable 'flycheck-lintr-linters
-                        "with_defaults(line_length_linter(82), commented_code_linter=NULL, infix_spaces_linter=NULL, camel_case_linter=NULL)")
+                        "with_defaults(line_length_linter(80), commented_code_linter=NULL, infix_spaces_linter=NULL, camel_case_linter=NULL, spaces_left_parentheses_linter=NULL)")
 
 
 (provide 'my-init-flymake)

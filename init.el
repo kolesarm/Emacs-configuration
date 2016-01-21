@@ -1,4 +1,4 @@
-;; Time-stamp: <2016-01-15 11:20:06 (kolesarm)>
+;; Time-stamp: <2016-01-20 22:41:50 (kolesarm)>
 
 ;; 1. EMACS LOAD PATH. All custom code in ~/.emacs.d/site-lisp
 (let ((default-directory "~/.emacs.d/site-lisp/"))
@@ -37,9 +37,11 @@
                         ethan-wspace
                         flycheck
                         git-gutter-fringe
+                        markdown-mode
                         matlab-mode
                         smartparens
                         smex
+                        polymode
                         todotxt-mode
                         window-numbering
                         yasnippet))
