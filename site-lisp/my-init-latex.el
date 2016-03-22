@@ -146,9 +146,22 @@
 ;; Add latexmk option to TeX-command-list and make it default
 (add-hook 'LaTeX-mode-hook
           (lambda ()
+            (add-to-list 'TeX-expand-list
+                         '("%(tex-file-name)"
+                           (lambda ()
+                             (concat
+                              "\"" (car (split-string (buffer-file-name) "\\.Rnw"))
+                              ".tex" "\""))))
             (push
              '("LaTeXmk" "latexmk -pdf %s" TeX-run-TeX nil t
                :help "Run latexmk on file") TeX-command-list)
+            (push
+             '("knitr" "R -e 'knitr::knit(\"%s\")'" TeX-run-TeX nil t
+               :help "Run knitr on file") TeX-command-list)
+            (push
+             '("klatex" "R -e 'knitr::knit(\"%s\")';latexmk -pdf %(tex-file-name)"
+               TeX-run-TeX nil t
+               :help "Run knitr and latexmk on .tex") TeX-command-list)
             (push
              '("arara" "arara --verbose %s" TeX-run-TeX nil t
                :help "Run arara on file") TeX-command-list)

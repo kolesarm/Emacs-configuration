@@ -1,4 +1,4 @@
-;; Time-stamp: <2015-12-26 14:40:26 (kolesarm)>
+;; Time-stamp: <2016-03-22 12:56:38 (kolesarm)>
 
 ;;; 1. ORG-MODE
 
@@ -13,6 +13,10 @@
 
 (setq org-ellipsis "⤵")
 
+;; default is t, since tables look terrible. I'd rather not have long lines
+;; cut-off by default, however
+(setq org-startup-truncated nil)
+
 ;; Fontify org-mode code blocks
 (setq org-src-fontify-natively t)
 ;; TAB in a code block is as if it were issued in the language major mode
@@ -21,6 +25,17 @@
 ;; Only needed when a capture template doesn't use absolute path, and when
 ;; capture note is filed away interactively
 (setq org-directory "~/manuals/")
+
+;; Enable stata code evaluation
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((stata . t)))
+
+;; Enable R code evaluation, disable lisp
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . nil)
+   (R . t)))
 
 ;; Alist of packages to be inserted in every LaTeX header. I'd rather do it from
 ;; .org file
@@ -47,6 +62,13 @@
             (require 'ox-odt)
             (require 'my-ob-stata)      ; Org-Babel support for stata
 ))
+
+
+;; Colored export of source code
+(require 'ox-latex)
+(add-to-list 'org-latex-packages-alist '("" "listings"))
+(add-to-list 'org-latex-packages-alist '("" "color"))
+(setq org-export-latex-listings t)
 
 ;; reftex overwrites this
 (add-hook 'org-mode-hook

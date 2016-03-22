@@ -1,4 +1,4 @@
-;; Time-stamp: <2015-12-27 04:51:58 (kolesarm)>
+;; Time-stamp: <2016-03-22 12:57:21 (kolesarm)>
 
 ;; I want C-x C-j to run dired-jump, it's in dired-x. These are eXtra features
 ;; for dired mode, that come with Emacs.

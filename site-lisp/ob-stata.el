@@ -308,6 +308,6 @@ Insert hline if column names in output have been requested."
       (cons (car result) (cons 'hline (cdr result)))
     result))
 
-(provide 'my-ob-stata)
+(provide 'ob-stata)
 
 ;;; ob-stata.el ends here

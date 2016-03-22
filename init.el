@@ -1,4 +1,4 @@
-;; Time-stamp: <2016-01-20 22:41:50 (kolesarm)>
+;; Time-stamp: <2016-02-19 18:04:30 (kolesarm)>
 
 ;; 1. EMACS LOAD PATH. All custom code in ~/.emacs.d/site-lisp
 (let ((default-directory "~/.emacs.d/site-lisp/"))
@@ -61,9 +61,10 @@
 ;; Language-specific
 (require 'my-init-magit)
 (require 'my-init-other-languages)        ; python, haskell, scheme
-(require 'my-init-matlab)                 ; matlab and ESS
-(eval-after-load 'org '(require 'my-org)) ; org and todotxt
 (require 'my-init-latex)                  ; latex
+(require 'my-init-matlab)                 ; matlab and ESS
+(require 'ob-stata)               ; Org-Babel support for evaluating stata code.
+(eval-after-load 'org '(require 'my-org)) ; org and todotxt
 (require 'my-init-flymake)                ; flymake
 
 

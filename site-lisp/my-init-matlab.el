@@ -35,14 +35,17 @@
 
 (set-default 'ess-history-file nil) ; don't save history
 
-;; 3. Polymode for knitr
+;; 3. Polymode for knitr, Emacs likes to freeze with this mode
 
 ;;; MARKDOWN
-(add-to-list 'auto-mode-alist '("\\.md" . poly-markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md" . markdown-mode))
+;; (add-to-list 'auto-mode-alist '("\\.md" . poly-markdown-mode))
 
-;;; R modes
-(add-to-list 'auto-mode-alist '("\\.Snw" . poly-noweb+r-mode))
-(add-to-list 'auto-mode-alist '("\\.Rnw" . poly-noweb+r-mode))
-(add-to-list 'auto-mode-alist '("\\.Rmd" . poly-markdown+r-mode))
+
+;; ;;; R modes
+(add-to-list 'auto-mode-alist '("\\.Rmd" . markdown-mode))
+;; (add-to-list 'auto-mode-alist '("\\.Snw" . poly-noweb+r-mode))
+;; (add-to-list 'auto-mode-alist '("\\.Rnw" . poly-noweb+r-mode))
+;; (add-to-list 'auto-mode-alist '("\\.Rmd" . poly-markdown+r-mode))
 
 (provide 'my-init-matlab)
