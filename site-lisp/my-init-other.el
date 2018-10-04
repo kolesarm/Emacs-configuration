@@ -1,4 +1,4 @@
-;; Time-stamp: <2015-12-23 13:07:58 (kolesarm)>
+;; Time-stamp: <2017-10-13 14:49:46 (kolesarm)>
 
 ;; 1. IBUFFER
 (defalias 'list-buffers 'ibuffer)
@@ -131,5 +131,9 @@ does the reverse of `fill-region'."
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 ;; old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+;; Langtool
+(require 'langtool)
+(setq langtool-language-tool-jar "~/bin/LanguageTool-3.9//languagetool-commandline.jar")
 
 (provide 'my-init-other)

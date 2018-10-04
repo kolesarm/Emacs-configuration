@@ -1,4 +1,4 @@
-;; Time-stamp: <2016-02-19 18:04:30 (kolesarm)>
+;; Time-stamp: <2018-09-03 15:26:06 (kolesarm)>
 
 ;; 1. EMACS LOAD PATH. All custom code in ~/.emacs.d/site-lisp
 (let ((default-directory "~/.emacs.d/site-lisp/"))
@@ -63,7 +63,7 @@
 (require 'my-init-other-languages)        ; python, haskell, scheme
 (require 'my-init-latex)                  ; latex
 (require 'my-init-matlab)                 ; matlab and ESS
-(require 'ob-stata)               ; Org-Babel support for evaluating stata code.
+(require 'ob-stata)                       ; Org-Babel support for evaluating stata code.
 (eval-after-load 'org '(require 'my-org)) ; org and todotxt
 (require 'my-init-flymake)                ; flymake
 
@@ -73,8 +73,29 @@
 
 ;; 5. START SERVER
 (server-start)
+;; Once Emacs server is started, you can use a shell command called emacsclient
+;; to connect to the Emacs process: set $EDITOR to it, or to emacsclient -c, or
+;; in particular, ~/.gitconfig wants emacsclient as editor (and not emacsclient
+;; -nw or emacs -nw), otherwise magit complains
 
 ;; 6. TELL ME ABOUT PACKAGES
 (if (every #'package-installed-p my-package-list)
     (message "All packages installed")
   (display-warning :warning "Not all packages installed"))
+
+;; 7. PREVENT EMACS FROM FREEZING WHEN YANKING FROM X11
+(setq x-selection-timeout 10)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (julia-mode langtool yasnippet window-numbering todotxt-mode smex smartparens rainbow-delimiters polymode pdf-tools matlab-mode markdown-mode magit haskell-mode git-gutter-fringe flycheck ethan-wspace ess diminish color-theme-solarized browse-kill-ring anzu))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

@@ -1,4 +1,4 @@
-; Time-stamp: <2015-12-26 14:31:15 (kolesarm)>
+; Time-stamp: <2016-06-25 14:54:39 (kolesarm)>
 
 ;; Set email to my actual email, not @fisher203.princeton.edu or whatever
 (setq user-mail-address "kolesarmi@googlemail.com")
@@ -86,9 +86,9 @@
 (setq-default indent-tabs-mode nil)
 
 ;; from MELPA
+(setq mode-require-final-newline nil)
 (require 'ethan-wspace)
 (global-ethan-wspace-mode 1)
-(setq mode-require-final-newline nil)
 ;; Handles "require-final-newline", "show-trailing-whitespace".
 ;; Ending file w  newline interferes with yasnippet, there it's ok
 

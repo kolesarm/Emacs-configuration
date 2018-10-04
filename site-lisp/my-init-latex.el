@@ -4,9 +4,10 @@
 (load "preview-latex.el" nil t t)
 
 (setq TeX-auto-save t)        ; Enable parse on save.
-(setq TeX-parse-self t)       ; Parse file after loading it if no style hook is found
-                              ; for it.
-(setq-default TeX-master nil) ; master file in multi-file
+(setq TeX-parse-self t)       ; Parse file after loading it if no style hook is
+                              ; found for it.
+;; Don't ask for master file
+;; (setq-default TeX-master nil) ; master file in multi-file
 (setq TeX-save-query nil)     ; If non-nil, then query user before saving each
                               ; file with TeX-save-document.
 (setq TeX-PDF-mode t)         ; pdf mode by default
@@ -153,7 +154,7 @@
                               "\"" (car (split-string (buffer-file-name) "\\.Rnw"))
                               ".tex" "\""))))
             (push
-             '("LaTeXmk" "latexmk -pdf %s" TeX-run-TeX nil t
+             '("LaTeXmk" "latexmk -synctex=1 -pdf %s" TeX-run-TeX nil t
                :help "Run latexmk on file") TeX-command-list)
             (push
              '("knitr" "R -e 'knitr::knit(\"%s\")'" TeX-run-TeX nil t
@@ -168,6 +169,29 @@
             (push
              '("compileboth" "compileboth %s" TeX-run-TeX nil t
                :help "Generate questions and answers") TeX-command-list)
+            (push
+             '("bothaspects" "bothaspects %s" TeX-run-TeX nil t
+               :help "Generate 16:9 and 4:3 slides") TeX-command-list)
             (setq TeX-command-default "LaTeXmk")))
+
+;; 6. pdf-tools
+;; 1. install pdf-tools from MELPA, then run
+(pdf-tools-install)
+;; See https://github.com/politza/pdf-tools
+;; M-x pdf-tools-help RET
+;; M-x pdf-tools-customize RET
+
+;; 7. ispell
+
+;; Skip math
+(require 'ispell)
+(add-hook 'LaTeX-mode-hook
+          '(lambda ()
+             (setq ispell-tex-skip-alists
+                   (list
+                    (append
+                     (car ispell-tex-skip-alists)
+                     '(("[^\\]\\$" . "[^\\]\\$")))
+                    (cadr ispell-tex-skip-alists))) ))
 
 (provide 'my-init-latex)

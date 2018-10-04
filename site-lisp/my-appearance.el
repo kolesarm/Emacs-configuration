@@ -1,4 +1,4 @@
-;; Time-stamp: <2015-12-27 04:47:50 (kolesarm)>
+;; Time-stamp: <2016-06-25 19:57:46 (kolesarm)>
 
 ;; 1. FONT LOCK AND BELLS
 

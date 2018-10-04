@@ -1,4 +1,4 @@
-;; Time-stamp: <2016-03-22 12:56:38 (kolesarm)>
+;; Time-stamp: <2018-10-04 08:26:07 (kolesarm)>
 
 ;;; 1. ORG-MODE
 
@@ -26,16 +26,10 @@
 ;; capture note is filed away interactively
 (setq org-directory "~/manuals/")
 
-;; Enable stata code evaluation
+;; Enable stata, sh and R code evaluation, disable lisp
 (org-babel-do-load-languages
  'org-babel-load-languages
- '((stata . t)))
-
-;; Enable R code evaluation, disable lisp
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((emacs-lisp . nil)
-   (R . t)))
+ '((emacs-lisp . nil) (R . t) (sh . t)  (stata . t)))
 
 ;; Alist of packages to be inserted in every LaTeX header. I'd rather do it from
 ;; .org file
@@ -59,8 +53,8 @@
 (add-hook 'org-mode-hook
           (lambda()
             (require 'ox-md)
-            (require 'ox-odt)
-            (require 'my-ob-stata)      ; Org-Babel support for stata
+            ;(require 'ox-odt)
+            (require 'ob-stata)      ; Org-Babel support for stata
 ))
 
 
