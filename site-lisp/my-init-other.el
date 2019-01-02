@@ -1,4 +1,4 @@
-;; Time-stamp: <2017-10-13 14:49:46 (kolesarm)>
+;; Time-stamp: <2018-11-16 10:43:22 (kolesarm)>
 
 ;; 1. IBUFFER
 (defalias 'list-buffers 'ibuffer)
@@ -79,7 +79,7 @@
 
 ;; 8. DEFAULT BROWSER
 (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "/usr/bin/iceweasel")
+      browse-url-generic-program "/usr/bin/firefox")
 
 ;; Webjumps
 (global-set-key (kbd "C-x g") 'webjump)
@@ -134,6 +134,6 @@ does the reverse of `fill-region'."
 
 ;; Langtool
 (require 'langtool)
-(setq langtool-language-tool-jar "~/bin/LanguageTool-3.9//languagetool-commandline.jar")
+(setq langtool-language-tool-jar "~/bin/LanguageTool-4.3/languagetool-commandline.jar")
 
 (provide 'my-init-other)

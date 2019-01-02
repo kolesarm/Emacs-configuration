@@ -1,4 +1,4 @@
-;; Time-stamp: <2016-06-25 19:57:46 (kolesarm)>
+;; Time-stamp: <2019-01-02 12:14:28 (kolesarm)>
 
 ;; 1. FONT LOCK AND BELLS
 
@@ -33,10 +33,11 @@
 ;; Highlight the whole expression not just the parentheses. If set to
 ;; parenthesis, only corresponding parentheses will be highlighted
 (setq show-paren-style 'expression)
-(set-face-attribute 'show-paren-match-face nil
-        :weight 'bold :italic 'normal :background "gainsboro")
-(set-face-attribute 'show-paren-mismatch-face nil
-                    :weight 'bold :slant 'normal :background "red")
+;; Doesn't work in Emacs 26.1
+;; (set-face-attribute 'show-paren-match-face nil
+;;         :weight 'bold :italic 'normal :background "gainsboro")
+;; (set-face-attribute 'show-paren-mismatch-face nil
+;;                     :weight 'bold :slant 'normal :background "red")
 
 ;; 3. COLORS AND FONTS
 

@@ -1,4 +1,4 @@
-;; Time-stamp: <2018-10-04 08:26:07 (kolesarm)>
+;; Time-stamp: <2019-01-02 12:18:33 (kolesarm)>
 
 ;;; 1. ORG-MODE
 
@@ -27,11 +27,15 @@
 (setq org-directory "~/manuals/")
 
 ;; Enable stata, sh and R code evaluation, disable lisp
+;; As of Emacs 26.1 need shell rather than sh, which points to /bin/sh specifically
 (org-babel-do-load-languages
  'org-babel-load-languages
- '((emacs-lisp . nil) (R . t) (sh . t)  (stata . t)))
+ '((emacs-lisp . nil) (R . t) (shell . t)  (stata . t)))
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . nil) (R . t) (stata . t)))
 
-;; Alist of packages to be inserted in every LaTeX header. I'd rather do it from
+;; A list of packages to be inserted in every LaTeX header. I'd rather do it from
 ;; .org file
 ;; (add-to-list 'org-latex-packages-alist '("" "listings"))
 ;; (add-to-list 'org-latex-packages-alist '("" "color"))
@@ -40,7 +44,7 @@
 (org-babel-do-load-languages
   'org-babel-load-languages
     '((R . t)
-      (sh . t)
+      (shell . t)
       (latex . t)
       (matlab . t)
       (python . t)
