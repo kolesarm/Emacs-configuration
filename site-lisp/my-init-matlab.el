@@ -38,6 +38,9 @@
 
 (set-default 'ess-history-file nil) ; don't save history
 
+;; Disable flymake, I use flycheck
+(setq ess-use-flymake nil)
+
 ;; 3. Polymode for knitr, Emacs likes to freeze with this mode
 
 ;;; MARKDOWN

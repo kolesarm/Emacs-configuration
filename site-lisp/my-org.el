@@ -1,4 +1,4 @@
-;; Time-stamp: <2019-01-02 12:18:33 (kolesarm)>
+;; Time-stamp: <2019-01-06 20:53:47 (kolesarm)>
 
 ;;; 1. ORG-MODE
 
@@ -30,7 +30,8 @@
 ;; As of Emacs 26.1 need shell rather than sh, which points to /bin/sh specifically
 (org-babel-do-load-languages
  'org-babel-load-languages
- '((emacs-lisp . nil) (R . t) (shell . t)  (stata . t)))
+ '((emacs-lisp . nil) (R . t) ;; (shell . t)
+   (stata . t)))
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((emacs-lisp . nil) (R . t) (stata . t)))
@@ -44,7 +45,7 @@
 (org-babel-do-load-languages
   'org-babel-load-languages
     '((R . t)
-      (shell . t)
+      ;; (shell . t)
       (latex . t)
       (matlab . t)
       (python . t)

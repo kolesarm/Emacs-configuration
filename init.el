@@ -1,4 +1,4 @@
-;; Time-stamp: <2018-09-03 15:26:06 (kolesarm)>
+;; Time-stamp: <2019-01-08 09:54:19 (kolesarm)>
 
 ;; 1. EMACS LOAD PATH. All custom code in ~/.emacs.d/site-lisp
 (let ((default-directory "~/.emacs.d/site-lisp/"))
@@ -65,7 +65,7 @@
 (require 'my-init-matlab)                 ; matlab and ESS
 (require 'ob-stata)                       ; Org-Babel support for evaluating stata code.
 (eval-after-load 'org '(require 'my-org)) ; org and todotxt
-(require 'my-init-flymake)                ; flymake
+(require 'my-init-flycheck)                ; flycheck
 
 
 ;; 4. INITIAL BUFFER
@@ -92,7 +92,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (julia-mode langtool yasnippet window-numbering todotxt-mode smex smartparens rainbow-delimiters polymode pdf-tools matlab-mode markdown-mode magit haskell-mode git-gutter-fringe flycheck ethan-wspace ess diminish color-theme-solarized browse-kill-ring anzu))))
+    (flycheck julia-mode langtool yasnippet window-numbering todotxt-mode smex smartparens rainbow-delimiters polymode pdf-tools matlab-mode markdown-mode magit haskell-mode git-gutter-fringe ethan-wspace ess diminish color-theme-solarized browse-kill-ring anzu))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
