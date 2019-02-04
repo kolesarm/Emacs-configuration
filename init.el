@@ -1,4 +1,4 @@
-;; Time-stamp: <2019-01-08 09:54:19 (kolesarm)>
+;; Time-stamp: <2019-02-04 11:10:13 (kolesarm)>
 
 ;; 1. EMACS LOAD PATH. All custom code in ~/.emacs.d/site-lisp
 (let ((default-directory "~/.emacs.d/site-lisp/"))
@@ -28,23 +28,6 @@
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
-;; Make a list of the packages you want
-(setq my-package-list '(;; gnu packages: auctex melpa packages:
-                        anzu
-                        browse-kill-ring
-                        color-theme-solarized
-                        diminish
-                        ethan-wspace
-                        flycheck
-                        git-gutter-fringe
-                        markdown-mode
-                        matlab-mode
-                        smartparens
-                        smex
-                        polymode
-                        todotxt-mode
-                        window-numbering
-                        yasnippet))
 (package-initialize)                    ; initialize ELPA packages
 
 ;; 4. CUSTOM SCRIPTS
@@ -78,12 +61,7 @@
 ;; in particular, ~/.gitconfig wants emacsclient as editor (and not emacsclient
 ;; -nw or emacs -nw), otherwise magit complains
 
-;; 6. TELL ME ABOUT PACKAGES
-(if (every #'package-installed-p my-package-list)
-    (message "All packages installed")
-  (display-warning :warning "Not all packages installed"))
-
-;; 7. PREVENT EMACS FROM FREEZING WHEN YANKING FROM X11
+;; 6. PREVENT EMACS FROM FREEZING WHEN YANKING FROM X11
 (setq x-selection-timeout 10)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -92,7 +70,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (flycheck julia-mode langtool yasnippet window-numbering todotxt-mode smex smartparens rainbow-delimiters polymode pdf-tools matlab-mode markdown-mode magit haskell-mode git-gutter-fringe ethan-wspace ess diminish color-theme-solarized browse-kill-ring anzu))))
+    (smartparens pdf-tools polymode markdown-mode julia-mode langtool yasnippet window-numbering todotxt-mode smex rainbow-delimiters matlab-mode magit git-gutter-fringe flycheck ethan-wspace ess diminish color-theme-solarized browse-kill-ring anzu))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
